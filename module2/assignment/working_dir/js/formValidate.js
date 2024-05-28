@@ -1,9 +1,9 @@
 /******w************
 
  Assignment 2 Javascript
- Name:
- Date:
- Description:
+ Name: Luping Xing
+ Date: 27 May, 2024
+ Description: formValidation of assignment 2
 
  *******************/
 
