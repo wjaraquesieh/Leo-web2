@@ -72,6 +72,21 @@ function validate_input()
         $errors[] = "Invalid province code: " . $province;
     }
 
+    $hasItem = false;
+    for ($i = 1; $i < 6; $i++) {
+        $quantity = filter_input(INPUT_POST, "qty" . $i, FILTER_VALIDATE_INT);
+        if (!$quantity && $_POST["qty" . $i] !== "") {
+            $errors[] = "Quantity must be numeric";
+            break;
+        } else {
+            if($quantity != 0) $hasItem = true;
+        }
+    }
+
+    if(!$hasItem) {
+        $errors[] = "There is no item selected";
+    }
+
     return $errors;
 }
 
