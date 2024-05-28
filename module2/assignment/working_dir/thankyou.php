@@ -17,7 +17,6 @@ $items = [
 
 function validate_input()
 {
-    global $items;
     $errors = [];
 
     $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
@@ -34,8 +33,6 @@ function validate_input()
     if ($creditCardLength != 10) {
         $errors[] = "Credit card number must be 10 digits.";
     }
-
-    $email = isset($_POST['email']) ? $_POST['email'] : null;
 
     $month = filter_input(INPUT_POST, 'month', FILTER_SANITIZE_NUMBER_INT);
     $year = filter_input(INPUT_POST, 'year', FILTER_SANITIZE_NUMBER_INT);
